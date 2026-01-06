@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Manager</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Technology Manager</h1>
+            <div class="nav-tabs">
+                <div class="nav-group">
+                    <button class="nav-tab active" data-page="assignments">Laptop Assignments</button>
+                    <button class="nav-tab" data-page="phone-assignments">Phone Assignments</button>
+                </div>
+                <div class="nav-group">
+                    <button class="nav-tab" data-page="manage-devices">Manage Devices</button>
+                    <button class="nav-tab" data-page="people">Manage People</button>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="header-stats" id="header-stats">
+                <div class="stat">
+                    <div class="stat-value" id="assigned-count">0</div>
+                    <div class="stat-label">Assigned</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="available-count">0</div>
+                    <div class="stat-label">Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="pending-count">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+            <div class="header-stats" id="header-stats-phones" style="display: none;">
+                <div class="stat">
+                    <div class="stat-value" id="phone-assigned-count">0</div>
+                    <div class="stat-label">Assigned</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="phone-available-count">0</div>
+                    <div class="stat-label">Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="phone-pending-count">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+            <div class="data-buttons" style="display: flex; gap: 8px;">
+                <button class="btn btn-secondary" onclick="exportData()" style="padding: 6px 12px; font-size: 12px;">Export Data</button>
+                <label class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px; cursor: pointer;">
+                    Import Data
+                    <input type="file" accept=".json" onchange="importData(event)" style="display: none;">
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Assignments Page -->
+    <div class="page active" id="page-assignments">
+        <div class="people-grid" id="people-grid"></div>
+
+        <div class="inventory-panel" id="inventory-panel">
+            <div class="inventory-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <h2>Inventory</h2>
+                    <button class="btn btn-primary" onclick="openAddLaptopModal()" style="padding: 4px 10px; font-size: 11px;">+ Add</button>
+                </div>
+                <div class="inventory-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #dbeafe; border: 1px solid #3b82f6;"></div>
+                        <span>On the Way</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot soon"></div>
+                        <span>Returning</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot scheduled"></div>
+                        <span>Going Out</span>
+                    </div>
+                </div>
+            </div>
+            <div class="inventory-content">
+                <div class="inventory-grid" id="inventory-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Assignments Page -->
+    <div class="page" id="page-phone-assignments">
+        <div class="people-grid" id="phone-people-grid"></div>
+
+        <div class="inventory-panel" id="phone-inventory-panel">
+            <div class="inventory-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <h2>Phone Inventory</h2>
+                    <button class="btn btn-primary" onclick="openAddPhoneModal()" style="padding: 4px 10px; font-size: 11px;">+ Add</button>
+                </div>
+                <div class="inventory-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #dbeafe; border: 1px solid #3b82f6;"></div>
+                        <span>On the Way</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot soon"></div>
+                        <span>Returning</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot scheduled"></div>
+                        <span>Going Out</span>
+                    </div>
+                </div>
+            </div>
+            <div class="inventory-content">
+                <div class="inventory-grid" id="phone-inventory-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Devices Page -->
+    <div class="page" id="page-manage-devices">
+        <div class="manage-page">
+            <!-- Device Type Tabs -->
+            <div class="device-tabs">
+                <button class="device-tab active" data-device="laptops" onclick="switchDeviceTab('laptops')">Laptops</button>
+                <button class="device-tab" data-device="phones" onclick="switchDeviceTab('phones')">Phones</button>
+            </div>
+
+            <!-- Laptops Section -->
+            <div class="device-section active" id="device-section-laptops">
+                <div class="manage-header">
+                    <h2>All Laptops</h2>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="search-box">
+                            <input type="text" id="laptop-search" placeholder="Search laptops..." oninput="renderLaptopsTable()">
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddLaptopModal()">+ Add Laptop</button>
+                    </div>
+                </div>
+                <div class="laptops-table">
+                    <div class="bulk-actions" id="bulk-actions">
+                        <span class="selected-count"><span id="selected-count">0</span> selected</span>
+                        <button class="btn btn-primary" onclick="openBulkEditModal()">Edit Selected</button>
+                        <button class="btn btn-secondary" onclick="clearSelection()">Clear Selection</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all" onchange="toggleSelectAll()"></th>
+                                <th>Model</th>
+                                <th>Tier</th>
+                                <th>Year</th>
+                                <th>Chip</th>
+                                <th>Size</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                                <th>Colour</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="laptops-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Phones Section -->
+            <div class="device-section" id="device-section-phones">
+                <div class="manage-header">
+                    <h2>All Phones</h2>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="search-box">
+                            <input type="text" id="phone-search" placeholder="Search phones..." oninput="renderPhonesTable()">
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddPhoneModal()">+ Add Phone</button>
+                    </div>
+                </div>
+                <div class="laptops-table">
+                    <div class="bulk-actions" id="phone-bulk-actions">
+                        <span class="selected-count"><span id="phone-selected-count">0</span> selected</span>
+                        <button class="btn btn-primary" onclick="openPhoneBulkEditModal()">Edit Selected</button>
+                        <button class="btn btn-secondary" onclick="clearPhoneSelection()">Clear Selection</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="phone-select-all" onchange="togglePhoneSelectAll()"></th>
+                                <th>Model</th>
+                                <th>Tier</th>
+                                <th>Storage</th>
+                                <th>Colour</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="phones-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage People Page -->
+    <div class="page" id="page-people">
+        <div class="manage-page">
+            <div class="manage-header">
+                <h2>All People</h2>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <div class="search-box">
+                        <input type="text" id="people-search" placeholder="Search people..." oninput="renderPeopleTable()">
+                    </div>
+                    <button class="btn btn-primary" onclick="openAddPersonModal()">+ Add Person</button>
+                </div>
+            </div>
+            <div class="laptops-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 120px;">Laptop Tier</th>
+                            <th style="text-align: center;">Name</th>
+                            <th style="width: 120px;">Phone Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody id="people-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swap Modal -->
+    <div class="modal-overlay" id="swap-modal">
+        <div class="modal">
+            <h2>Schedule Laptop Swap</h2>
+            <p>Select a replacement laptop for <strong id="swap-person-name"></strong></p>
+            <div class="modal-laptops" id="modal-laptops"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeSwapModal()">Cancel</button>
+                <button class="btn btn-primary" id="confirm-swap-btn" disabled onclick="confirmSwap()">Schedule Swap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove from Person Modal -->
+    <div class="modal-overlay" id="remove-modal">
+        <div class="modal">
+            <h2>Remove Laptop</h2>
+            <p>What would you like to do with this laptop?</p>
+            <div class="remove-options">
+                <div class="remove-option" data-action="inventory" onclick="selectRemoveOption('inventory')">
+                    <div class="remove-option-icon inventory">📦</div>
+                    <div class="remove-option-text">
+                        <h3>Return to Inventory</h3>
+                        <p>Make this laptop available for reassignment</p>
+                    </div>
+                </div>
+                <div class="remove-option" data-action="bin" onclick="selectRemoveOption('bin')">
+                    <div class="remove-option-icon bin">🗑️</div>
+                    <div class="remove-option-text">
+                        <h3>Remove Permanently</h3>
+                        <p>Delete this laptop from the system</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeRemoveModal()">Cancel</button>
+                <button class="btn btn-primary" id="confirm-remove-btn" disabled onclick="confirmRemove()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Laptop Modal -->
+    <div class="modal-overlay" id="laptop-modal">
+        <div class="modal">
+            <h2 id="laptop-modal-title">Add New Laptop</h2>
+            <p id="laptop-modal-desc">Enter the laptop specifications below</p>
+            <form id="laptop-form" onsubmit="saveLaptop(event)">
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" id="laptop-model" placeholder="e.g. MacBook Pro 14">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Chip/Processor</label>
+                        <input type="text" id="laptop-chip" placeholder="e.g. M3 Pro">
+                    </div>
+                    <div class="form-group">
+                        <label>Screen Size</label>
+                        <input type="text" id="laptop-size" placeholder="e.g. 14&quot;">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>RAM</label>
+                        <select id="laptop-ram">
+                            <option value="">Select RAM</option>
+                            <option value="8GB">8GB</option>
+                            <option value="16GB">16GB</option>
+                            <option value="18GB">18GB</option>
+                            <option value="24GB">24GB</option>
+                            <option value="32GB">32GB</option>
+                            <option value="36GB">36GB</option>
+                            <option value="48GB">48GB</option>
+                            <option value="64GB">64GB</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Storage</label>
+                        <select id="laptop-storage">
+                            <option value="">Select storage</option>
+                            <option value="256GB">256GB</option>
+                            <option value="512GB">512GB</option>
+                            <option value="1TB">1TB</option>
+                            <option value="2TB">2TB</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Colour</label>
+                        <input type="text" id="laptop-colour" placeholder="e.g. Space Black">
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <select id="laptop-year">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Laptop Tier</label>
+                        <select id="laptop-tier">
+                            <option value="auto" selected>Auto (based on specs)</option>
+                            <option value="S">S - Premium</option>
+                            <option value="A">A - High-end</option>
+                            <option value="B">B - Standard</option>
+                            <option value="C">C - Basic</option>
+                            <option value="D">D - Legacy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="laptop-status">
+                            <option value="available">Available</option>
+                            <option value="incoming">On the Way</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="laptop-new" style="width: 18px; height: 18px;">
+                        <span>Brand New</span>
+                    </label>
+                </div>
+                <div id="owner-history-section" style="display: none; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <label style="font-size: 13px; font-weight: 500; color: #374151;">Owner History</label>
+                        <button type="button" class="btn btn-secondary" onclick="addHistoryEntry()" style="padding: 2px 8px; font-size: 11px;">+ Add</button>
+                    </div>
+                    <div id="owner-history-list" style="background: #f9fafb; border-radius: 6px; padding: 10px; font-size: 12px; max-height: 150px; overflow-y: auto;"></div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="closeLaptopModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="laptop-submit-btn">Add Laptop</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="delete-modal">
+        <div class="modal">
+            <h2>Delete Laptop</h2>
+            <p>Are you sure you want to permanently delete this laptop? This action cannot be undone.</p>
+            <div id="delete-laptop-info" style="background: #f9fafb; padding: 12px; border-radius: 6px; margin-bottom: 16px;"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDeleteLaptop()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Edit Modal -->
+    <div class="modal-overlay" id="bulk-edit-modal">
+        <div class="modal">
+            <h2>Edit Multiple Laptops</h2>
+            <p>Update fields for <strong id="bulk-edit-count">0</strong> selected laptops. Leave fields empty to keep current values.</p>
+            <form id="bulk-edit-form" onsubmit="saveBulkEdit(event)">
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" id="bulk-model" placeholder="No change">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Chip/Processor</label>
+                        <input type="text" id="bulk-chip" placeholder="No change">
+                    </div>
+                    <div class="form-group">
+                        <label>Screen Size</label>
+                        <input type="text" id="bulk-size" placeholder="No change">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>RAM</label>
+                        <select id="bulk-ram">
+                            <option value="">-- No change --</option>
+                            <option value="8GB">8GB</option>
+                            <option value="16GB">16GB</option>
+                            <option value="18GB">18GB</option>
+                            <option value="24GB">24GB</option>
+                            <option value="32GB">32GB</option>
+                            <option value="36GB">36GB</option>
+                            <option value="48GB">48GB</option>
+                            <option value="64GB">64GB</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Storage</label>
+                        <select id="bulk-storage">
+                            <option value="">-- No change --</option>
+                            <option value="256GB">256GB</option>
+                            <option value="512GB">512GB</option>
+                            <option value="1TB">1TB</option>
+                            <option value="2TB">2TB</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Colour</label>
+                        <input type="text" id="bulk-colour" placeholder="No change">
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <select id="bulk-year">
+                            <option value="">-- No change --</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Laptop Tier</label>
+                        <select id="bulk-tier">
+                            <option value="">-- No change --</option>
+                            <option value="S">S - Premium</option>
+                            <option value="A">A - High-end</option>
+                            <option value="B">B - Standard</option>
+                            <option value="C">C - Basic</option>
+                            <option value="D">D - Legacy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Brand New Status</label>
+                        <select id="bulk-new">
+                            <option value="">-- No change --</option>
+                            <option value="true">Yes - Brand New</option>
+                            <option value="false">No - Not New</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="closeBulkEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Apply Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Person Modal -->
+    <div class="modal-overlay" id="person-modal">
+        <div class="modal">
+            <h2 id="person-modal-title">Add New Person</h2>
+            <p id="person-modal-desc">Enter the person's name below</p>
+            <form id="person-form" onsubmit="savePerson(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="person-name" placeholder="e.g. John Smith" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Laptop Priority Tier</label>
+                        <select id="person-tier" required>
+                            <option value="S">S - Critical</option>
+                            <option value="A">A - High</option>
+                            <option value="B" selected>B - Standard</option>
+                            <option value="C">C - Low</option>
+                            <option value="D">D - Minimal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Priority Tier</label>
+                        <select id="person-phone-tier" required>
+                            <option value="S">S - Critical</option>
+                            <option value="A">A - High</option>
+                            <option value="B" selected>B - Standard</option>
+                            <option value="C">C - Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-danger" id="person-delete-btn" style="display: none; margin-right: auto;" onclick="deletePersonFromModal()">Delete</button>
+                    <button type="button" class="btn btn-secondary" onclick="closePersonModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="person-submit-btn">Add Person</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Person Confirmation Modal -->
+    <div class="modal-overlay" id="delete-person-modal">
+        <div class="modal">
+            <h2>Remove Person</h2>
+            <p>Are you sure you want to remove this person?</p>
+            <div id="delete-person-info" style="background: #f9fafb; padding: 12px; border-radius: 6px; margin-bottom: 16px;"></div>
+            <div id="delete-person-warning" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 12px; border-radius: 6px; margin-bottom: 16px; font-size: 13px; color: #92400e;"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeDeletePersonModal()">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDeletePerson()">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Swap Modal -->
+    <div class="modal-overlay" id="phone-swap-modal">
+        <div class="modal">
+            <h2>Schedule Phone Swap</h2>
+            <p>Select a replacement phone for <strong id="phone-swap-person-name"></strong></p>
+            <div class="modal-laptops" id="phone-modal-phones"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closePhoneSwapModal()">Cancel</button>
+                <button class="btn btn-primary" id="confirm-phone-swap-btn" disabled onclick="confirmPhoneSwap()">Schedule Swap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Remove from Person Modal -->
+    <div class="modal-overlay" id="phone-remove-modal">
+        <div class="modal">
+            <h2>Remove Phone</h2>
+            <p>What would you like to do with this phone?</p>
+            <div class="remove-options">
+                <div class="remove-option" data-action="inventory" onclick="selectPhoneRemoveOption('inventory')">
+                    <div class="remove-option-icon inventory">📦</div>
+                    <div class="remove-option-text">
+                        <h3>Return to Inventory</h3>
+                        <p>Make this phone available for reassignment</p>
+                    </div>
+                </div>
+                <div class="remove-option" data-action="bin" onclick="selectPhoneRemoveOption('bin')">
+                    <div class="remove-option-icon bin">🗑️</div>
+                    <div class="remove-option-text">
+                        <h3>Remove Permanently</h3>
+                        <p>Delete this phone from the system</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closePhoneRemoveModal()">Cancel</button>
+                <button class="btn btn-primary" id="confirm-phone-remove-btn" disabled onclick="confirmPhoneRemove()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Phone Modal -->
+    <div class="modal-overlay" id="phone-modal">
+        <div class="modal">
+            <h2 id="phone-modal-title">Add New Phone</h2>
+            <p id="phone-modal-desc">Enter the phone specifications below</p>
+            <form id="phone-form" onsubmit="savePhone(event)">
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" id="phone-model" placeholder="e.g. iPhone 15 Pro">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Storage</label>
+                        <select id="phone-storage">
+                            <option value="">Select storage</option>
+                            <option value="64GB">64GB</option>
+                            <option value="128GB">128GB</option>
+                            <option value="256GB">256GB</option>
+                            <option value="512GB">512GB</option>
+                            <option value="1TB">1TB</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Colour</label>
+                        <input type="text" id="phone-colour" placeholder="e.g. Space Black">
+                    </div>
+                </div>
+                <div class="form-row" id="phone-tier-row">
+                    <div class="form-group">
+                        <label>Phone Tier</label>
+                        <select id="phone-tier">
+                            <option value="S">S - Premium</option>
+                            <option value="A">A - High-end</option>
+                            <option value="B" selected>B - Standard</option>
+                            <option value="C">C - Basic</option>
+                        </select>
+                        <div id="phone-tier-warning" style="display: none; color: #dc2626; font-size: 11px; margin-top: 4px;">
+                            Non-USB-C phones must be B tier or below
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="phone-status">
+                            <option value="available">Available</option>
+                            <option value="incoming">On the Way</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: flex-end;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding-bottom: 10px;">
+                            <input type="checkbox" id="phone-new" style="width: 18px; height: 18px;">
+                            <span>Brand New</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="phone-owner-history-section" style="display: none; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <label style="font-size: 13px; font-weight: 500; color: #374151;">Owner History</label>
+                        <button type="button" class="btn btn-secondary" onclick="addPhoneHistoryEntry()" style="padding: 2px 8px; font-size: 11px;">+ Add</button>
+                    </div>
+                    <div id="phone-owner-history-list" style="background: #f9fafb; border-radius: 6px; padding: 10px; font-size: 12px; max-height: 150px; overflow-y: auto;"></div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="closePhoneModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="phone-submit-btn">Add Phone</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Phone Confirmation Modal -->
+    <div class="modal-overlay" id="delete-phone-modal">
+        <div class="modal">
+            <h2>Delete Phone</h2>
+            <p>Are you sure you want to permanently delete this phone? This action cannot be undone.</p>
+            <div id="delete-phone-info" style="background: #f9fafb; padding: 12px; border-radius: 6px; margin-bottom: 16px;"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeDeletePhoneModal()">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDeletePhone()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Bulk Edit Modal -->
+    <div class="modal-overlay" id="phone-bulk-edit-modal">
+        <div class="modal">
+            <h2>Edit Multiple Phones</h2>
+            <p>Update fields for <strong id="phone-bulk-edit-count">0</strong> selected phones. Leave fields empty to keep current values.</p>
+            <form id="phone-bulk-edit-form" onsubmit="savePhoneBulkEdit(event)">
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" id="phone-bulk-model" placeholder="No change">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Storage</label>
+                        <select id="phone-bulk-storage">
+                            <option value="">-- No change --</option>
+                            <option value="64GB">64GB</option>
+                            <option value="128GB">128GB</option>
+                            <option value="256GB">256GB</option>
+                            <option value="512GB">512GB</option>
+                            <option value="1TB">1TB</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Colour</label>
+                        <input type="text" id="phone-bulk-colour" placeholder="No change">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Phone Tier</label>
+                        <select id="phone-bulk-tier">
+                            <option value="">-- No change --</option>
+                            <option value="S">S - Premium</option>
+                            <option value="A">A - High-end</option>
+                            <option value="B">B - Standard</option>
+                            <option value="C">C - Basic</option>
+                        </select>
+                        <div style="color: #64748b; font-size: 11px; margin-top: 4px;">
+                            Non-USB-C phones will be set to B tier minimum
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Brand New Status</label>
+                    <select id="phone-bulk-new">
+                        <option value="">-- No change --</option>
+                        <option value="true">Yes - Brand New</option>
+                        <option value="false">No - Not New</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="closePhoneBulkEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Apply Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>

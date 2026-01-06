@@ -1,0 +1,1310 @@
+{
+  "people": [
+    {
+      "name": "Sameeha",
+      "tier": "A",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Tyrone",
+      "tier": "A",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Faizan",
+      "tier": "A",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Axel",
+      "tier": "A",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Ali",
+      "tier": "A",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Kiki",
+      "tier": "A",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Simon",
+      "tier": "B",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Panos",
+      "tier": "B",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Celine",
+      "tier": "B",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Laila",
+      "tier": "B",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Aristotelis",
+      "tier": "B",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Silmi",
+      "tier": "C",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Clara",
+      "tier": "C",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Assiya",
+      "tier": "C",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Fatima A",
+      "tier": "C",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Zahid",
+      "tier": "C",
+      "phoneTier": "A"
+    },
+    {
+      "name": "Naziha",
+      "tier": "S",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Omar",
+      "tier": "S",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Mikyas",
+      "tier": "S",
+      "phoneTier": "A"
+    },
+    {
+      "name": "Hamza",
+      "tier": "S",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Maitham",
+      "tier": "S",
+      "phoneTier": "S"
+    },
+    {
+      "name": "Hussam",
+      "tier": "S",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Fatima H",
+      "tier": "D",
+      "phoneTier": "B"
+    },
+    {
+      "name": "William",
+      "tier": "D",
+      "phoneTier": "B"
+    },
+    {
+      "name": "Adam",
+      "tier": "D",
+      "phoneTier": "A"
+    }
+  ],
+  "laptops": [
+    {
+      "id": 1,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "Black",
+      "isNew": false,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Simon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "model": "MacBook Pro",
+      "year": "2022",
+      "chip": "M2",
+      "ram": "24GB",
+      "storage": "512GB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "owner": "Naziha",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M4",
+      "ram": "24GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "owner": "Sameeha",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "14\"",
+      "colour": "Black",
+      "isNew": false,
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Panos"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 5,
+      "model": "MacBook Pro",
+      "year": "2023",
+      "chip": "M3",
+      "ram": "18GB",
+      "storage": "512GB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "owner": "Kiki",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "owner": "Tyrone",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": true,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Faizan"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 8,
+      "model": "MacBook Air ",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "24GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Metallic Blue",
+      "isNew": false,
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Fatima A"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 9,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M3",
+      "ram": "18GB",
+      "storage": "512GB",
+      "size": "16\"",
+      "colour": "Black ",
+      "isNew": false,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Axel"
+        },
+        {
+          "date": "2026-01-05",
+          "owner": "Aristotelis"
+        },
+        {
+          "date": "2026-01-05",
+          "owner": "Aristotelis"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 10,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M4 Max",
+      "ram": "36GB",
+      "storage": "1TB",
+      "size": "14''",
+      "colour": "Silver",
+      "isNew": false,
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Omar"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 11,
+      "model": "MacBook Pro",
+      "year": "2024",
+      "chip": "M4 Max",
+      "ram": "36GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Mikyas"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 12,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Silmi"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "model": "MacBook Pro",
+      "year": "2023",
+      "chip": "M3",
+      "ram": "8GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "C",
+      "ownerHistory": [
+        {
+          "owner": "William",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "model": "MacBook Air",
+      "year": "2020",
+      "chip": "M1",
+      "ram": "8GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "D",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Faizan"
+        },
+        {
+          "date": "2025-12-31",
+          "owner": "Celine"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-05"
+        },
+        {
+          "owner": "Celine",
+          "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "model": "MacBook Pro",
+      "year": "2019",
+      "chip": "Intel i5",
+      "ram": "8GB",
+      "storage": "",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "D",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "2025-12-30",
+          "owner": "Simon"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "model": "MacBook Air",
+      "year": "2020",
+      "chip": "M1",
+      "ram": "8GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "D",
+      "ownerHistory": [
+        {
+          "owner": "Zahid",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "model": "MacBook Air ",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "24GB",
+      "storage": "",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Laila"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 18,
+      "model": "MacBook Air",
+      "year": "2020",
+      "chip": "M1",
+      "ram": "4GB",
+      "storage": "64GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "D",
+      "ownerHistory": [
+        {
+          "owner": "Aristotelis",
+          "date": "Initial"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "model": "MacBook Air ",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": true,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Ali"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "model": "MacBook Air ",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Clara"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 21,
+      "model": "Dell XPS",
+      "year": "",
+      "chip": "",
+      "ram": "",
+      "storage": "",
+      "size": "",
+      "colour": "",
+      "isNew": false,
+      "tier": "D",
+      "ownerHistory": [
+        {
+          "owner": "Adam",
+          "date": "Initial"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-06"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "model": "MacBook Air ",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Space Black ",
+      "isNew": false,
+      "tier": "B",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Assiya"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 23,
+      "model": "MacBook Air",
+      "year": "2024",
+      "chip": "M3",
+      "ram": "16GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "owner": "Hamza",
+          "date": "Initial"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "model": "MacBook Pro ",
+      "year": "2025",
+      "chip": "M4 Pro",
+      "ram": "48GB",
+      "storage": "512GB",
+      "size": "16\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Maitham"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 25,
+      "model": "Dell Laptop",
+      "year": "",
+      "chip": "",
+      "ram": "32GB",
+      "storage": "",
+      "size": "",
+      "colour": "",
+      "isNew": false,
+      "tier": "C",
+      "ownerHistory": [
+        {
+          "date": "Initial",
+          "owner": "Hussam"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 26,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "8GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "",
+      "isNew": false,
+      "tier": "C",
+      "status": "available",
+      "ownerHistory": [
+        {
+          "date": "2025-12-30",
+          "owner": "Ali"
+        },
+        {
+          "owner": "Adam",
+          "date": "2026-01-06"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "256GB",
+      "size": "13\"",
+      "colour": "Space Black",
+      "isNew": true,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": []
+    },
+    {
+      "id": 28,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "16GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Space Black",
+      "isNew": true,
+      "tier": "B",
+      "status": "available",
+      "ownerHistory": []
+    },
+    {
+      "id": 30,
+      "model": "MacBook Air",
+      "chip": "M2",
+      "size": "15",
+      "ram": "8GB",
+      "storage": "512GB",
+      "colour": "",
+      "year": "2023",
+      "tier": "C",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2025-12-30",
+          "owner": "Maitham"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "model": "MacBook Pro",
+      "year": "2025",
+      "chip": "M5",
+      "ram": "32GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "Space Black",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Ordered ",
+          "owner": "Faizan"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "24GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Sky Blue",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Faizan"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "32GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Midnight",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Naziha"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "model": "MacBook Pro",
+      "year": "2025",
+      "chip": "M5",
+      "ram": "32GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "Silver",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "S",
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Naziha"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "model": "MacBook Pro",
+      "year": "2025",
+      "chip": "M5",
+      "ram": "24GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "Silver",
+      "isNew": true,
+      "status": "available",
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Ordered",
+          "owner": "Maitham "
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "model": "MacBook Pro",
+      "chip": "M5",
+      "size": "14'",
+      "ram": "16GB",
+      "storage": "512GB",
+      "colour": "Space Black",
+      "year": "2025",
+      "tier": "A",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Ali"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "model": "MacBook Pro",
+      "year": "2025",
+      "chip": "M5",
+      "ram": "16GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "Black",
+      "isNew": true,
+      "status": "available",
+      "tier": "A",
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Sameeha"
+        },
+        {
+          "owner": "Axel",
+          "date": "2026-01-05"
+        }
+      ]
+    }
+  ],
+  "phones": [
+    {
+      "id": 1,
+      "model": "Pixel Fold 9",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2024-01-01",
+          "owner": "Simon"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 2,
+      "model": "Pixel 6a",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Naziha",
+          "date": "2022-01-01"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "model": "Pixel Fold Pro 9",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Sameeha",
+          "date": "2024-01-01"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "model": "iPhone 12",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Panos",
+          "date": "2020-01-01"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "model": "Samsung Fold 5",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Kiki",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "model": "Samsung Fold 5",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Tyrone",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "model": "iPhone 14 Pro",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Faizan",
+          "date": "2022-01-01"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "model": "iPhone 15",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Fatima A",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "model": "iPhone 15 Pro Max",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Fatima H",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "model": "iPhone 13 Pro",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Axel",
+          "date": "2021-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Omar",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "model": "iPhone 15 Pro",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Mikyas",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "model": "iPhone 12",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Silmi",
+          "date": "2020-01-01"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "model": "iPhone 13 Pro",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "William",
+          "date": "2021-01-01"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "model": "Google Pixel 8a",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Celine",
+          "date": "2024-01-01"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "model": "iPhone XS Max",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": null,
+          "date": "2026-01-05"
+        },
+        {
+          "owner": "Zahid",
+          "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "model": "iPhone 14",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Laila",
+          "date": "2022-01-01"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "model": "iPhone 11",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Aristotelis",
+          "date": "2019-01-01"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "model": "iPhone 13",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Ali",
+          "date": "2021-01-01"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "model": "iPhone 13",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Clara",
+          "date": "2021-01-01"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "model": "iPhone 15",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Adam",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "model": "iPhone 11",
+      "storage": "",
+      "colour": "",
+      "tier": "C",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Assiya",
+          "date": "2019-01-01"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "model": "iPhone 15 Pro Max",
+      "storage": "",
+      "colour": "",
+      "tier": "A",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Hamza",
+          "date": "2023-01-01"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "model": "iPhone 17",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "owner": "Maitham",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "model": "Samsung Fold 7 ",
+      "storage": "",
+      "colour": "",
+      "tier": "B",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Axel",
+          "date": "2026-01-05"
+        }
+      ]
+    }
+  ],
+  "assignments": {
+    "Sameeha": 3,
+    "Tyrone": 6,
+    "Faizan": 7,
+    "Axel": 38,
+    "Ali": 19,
+    "Kiki": 5,
+    "Simon": 1,
+    "Panos": 4,
+    "Celine": 14,
+    "Laila": 17,
+    "Aristotelis": 9,
+    "Silmi": 12,
+    "Clara": 20,
+    "Assiya": 22,
+    "Fatima A": 8,
+    "Zahid": 16,
+    "Naziha": 2,
+    "Omar": 10,
+    "Mikyas": 11,
+    "Hamza": 23,
+    "Maitham": 24,
+    "Hussam": 25,
+    "William": 13,
+    "Adam": 26
+  },
+  "phoneAssignments": {
+    "Sameeha": 3,
+    "Tyrone": 6,
+    "Faizan": 7,
+    "Ali": 20,
+    "Kiki": 5,
+    "Simon": 1,
+    "Panos": 4,
+    "Celine": 15,
+    "Laila": 18,
+    "Aristotelis": 19,
+    "Silmi": 13,
+    "Clara": 21,
+    "Assiya": 23,
+    "Fatima A": 8,
+    "Naziha": 2,
+    "Omar": 11,
+    "Mikyas": 12,
+    "Hamza": 24,
+    "Maitham": 25,
+    "Fatima H": 9,
+    "William": 14,
+    "Adam": 22,
+    "Zahid": 17,
+    "Axel": 26
+  },
+  "pendingSwaps": {
+    "Naziha": {
+      "currentLaptopId": 2,
+      "newLaptopId": 33
+    },
+    "Hamza": {
+      "currentLaptopId": 23,
+      "newLaptopId": 10
+    },
+    "Omar": {
+      "currentLaptopId": 10,
+      "newLaptopId": 34
+    },
+    "Hussam": {
+      "currentLaptopId": 25,
+      "newLaptopId": 31
+    },
+    "Zahid": {
+      "currentLaptopId": 16,
+      "newLaptopId": 14
+    },
+    "Sameeha": {
+      "currentLaptopId": 3,
+      "newLaptopId": 8
+    },
+    "Fatima A": {
+      "currentLaptopId": 8,
+      "newLaptopId": 27
+    }
+  },
+  "pendingPhoneSwaps": {},
+  "nextLaptopId": 39,
+  "nextPhoneId": 30,
+  "lockedAssignments": {
+    "Sameeha": false,
+    "Tyrone": false,
+    "Faizan": false,
+    "Simon": false,
+    "Panos": false,
+    "Celine": false,
+    "Laila": false,
+    "Assiya": false,
+    "Mikyas": false
+  },
+  "lockedPhoneAssignments": {
+    "Adam": false,
+    "Zahid": false,
+    "Hussam": false,
+    "Ali": false,
+    "Simon": false,
+    "Panos": false,
+    "Celine": false,
+    "Laila": false,
+    "Aristotelis": false,
+    "Silmi": false,
+    "Clara": false,
+    "Assiya": false,
+    "Fatima A": false,
+    "Fatima H": false,
+    "William": false,
+    "Naziha": false
+  },
+  "exportDate": "2026-01-06T13:37:26.605Z"
+}
