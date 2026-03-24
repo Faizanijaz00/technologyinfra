@@ -3,7 +3,8 @@
     {
       "name": "Sameeha",
       "tier": "A",
-      "phoneTier": "S"
+      "phoneTier": "S",
+      "phonePreference": "samsung"
     },
     {
       "name": "Tyrone",
@@ -13,17 +14,19 @@
     {
       "name": "Faizan",
       "tier": "A",
-      "phoneTier": "S"
+      "phoneTier": "B",
+      "phonePreference": "samsung"
     },
     {
       "name": "Axel",
       "tier": "A",
-      "phoneTier": "S"
+      "phoneTier": "A"
     },
     {
       "name": "Ali",
       "tier": "A",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "iphone"
     },
     {
       "name": "Kiki",
@@ -38,12 +41,14 @@
     {
       "name": "Panos",
       "tier": "B",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "samsung"
     },
     {
       "name": "Celine",
       "tier": "B",
-      "phoneTier": "B"
+      "phoneTier": "A",
+      "phonePreference": "samsung"
     },
     {
       "name": "Laila",
@@ -53,7 +58,14 @@
     {
       "name": "Aristotelis",
       "tier": "B",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "samsung"
+    },
+    {
+      "name": "Fivos",
+      "tier": "B",
+      "phoneTier": "B",
+      "phonePreference": "samsung"
     },
     {
       "name": "Silmi",
@@ -63,12 +75,14 @@
     {
       "name": "Clara",
       "tier": "C",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "iphone"
     },
     {
       "name": "Assiya",
       "tier": "C",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "iphone"
     },
     {
       "name": "Fatima A",
@@ -78,12 +92,14 @@
     {
       "name": "Zahid",
       "tier": "C",
-      "phoneTier": "A"
+      "phoneTier": "A",
+      "phonePreference": "iphone"
     },
     {
       "name": "Naziha",
       "tier": "S",
-      "phoneTier": "B"
+      "phoneTier": "S",
+      "phonePreference": "samsung"
     },
     {
       "name": "Omar",
@@ -93,7 +109,7 @@
     {
       "name": "Mikyas",
       "tier": "S",
-      "phoneTier": "A"
+      "phoneTier": "S"
     },
     {
       "name": "Hamza",
@@ -108,7 +124,7 @@
     {
       "name": "Hussam",
       "tier": "S",
-      "phoneTier": "B"
+      "phoneTier": "S"
     },
     {
       "name": "Fatima H",
@@ -118,12 +134,13 @@
     {
       "name": "William",
       "tier": "D",
-      "phoneTier": "B"
+      "phoneTier": "B",
+      "phonePreference": "iphone"
     },
     {
       "name": "Adam",
       "tier": "D",
-      "phoneTier": "A"
+      "phoneTier": "B"
     }
   ],
   "laptops": [
@@ -442,6 +459,10 @@
         {
           "owner": "Zahid",
           "date": "Initial"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-12"
         }
       ]
     },
@@ -671,7 +692,12 @@
       "isNew": true,
       "tier": "B",
       "status": "available",
-      "ownerHistory": []
+      "ownerHistory": [
+        {
+          "owner": "Zahid",
+          "date": "2026-01-12"
+        }
+      ]
     },
     {
       "id": 30,
@@ -836,7 +862,7 @@
       "model": "Pixel Fold 9",
       "storage": "",
       "colour": "",
-      "tier": "A",
+      "tier": "S",
       "isNew": false,
       "ownerHistory": [
         {
@@ -851,14 +877,19 @@
       "model": "Pixel 6a",
       "storage": "",
       "colour": "",
-      "tier": "A",
+      "tier": "B",
       "isNew": false,
       "ownerHistory": [
         {
           "owner": "Naziha",
           "date": "2022-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-27"
         }
-      ]
+      ],
+      "status": "available"
     },
     {
       "id": 3,
@@ -897,10 +928,16 @@
       "isNew": false,
       "ownerHistory": [
         {
-          "owner": "Kiki",
-          "date": "2023-01-01"
+          "date": "2023-01-01",
+          "owner": "Kiki"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-27"
         }
-      ]
+      ],
+      "status": "available",
+      "isUncertain": false
     },
     {
       "id": 6,
@@ -913,29 +950,36 @@
         {
           "owner": "Tyrone",
           "date": "2023-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-16"
         }
-      ]
+      ],
+      "status": "available"
     },
     {
       "id": 7,
       "model": "iPhone 14 Pro",
-      "storage": "",
-      "colour": "",
+      "storage": "256GB",
+      "colour": "Purple",
       "tier": "C",
       "isNew": false,
       "ownerHistory": [
         {
-          "owner": "Faizan",
-          "date": "2022-01-01"
+          "date": "2022-01-01",
+          "owner": "Faizan"
         }
-      ]
+      ],
+      "status": "available",
+      "isUncertain": false
     },
     {
       "id": 8,
       "model": "iPhone 15",
       "storage": "",
       "colour": "",
-      "tier": "A",
+      "tier": "B",
       "isNew": false,
       "ownerHistory": [
         {
@@ -953,10 +997,16 @@
       "isNew": false,
       "ownerHistory": [
         {
-          "owner": "Fatima H",
-          "date": "2023-01-01"
+          "date": "2023-01-01",
+          "owner": "Fatima H"
+        },
+        {
+          "date": "2026-01-16",
+          "owner": "Clara (Gate) "
         }
-      ]
+      ],
+      "status": "available",
+      "isUncertain": false
     },
     {
       "id": 10,
@@ -967,14 +1017,16 @@
       "isNew": false,
       "ownerHistory": [
         {
-          "owner": "Axel",
-          "date": "2021-01-01"
+          "date": "2021-01-01",
+          "owner": "Axel (2nd)"
         },
         {
-          "owner": null,
-          "date": "2026-01-05"
+          "date": "2026-01-05",
+          "owner": null
         }
-      ]
+      ],
+      "status": "available",
+      "isUncertain": false
     },
     {
       "id": 11,
@@ -1001,22 +1053,33 @@
         {
           "owner": "Mikyas",
           "date": "2023-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-16"
+        },
+        {
+          "owner": "Zahid",
+          "date": "2026-01-16"
         }
-      ]
+      ],
+      "status": "assigned"
     },
     {
       "id": 13,
-      "model": "iPhone 12",
+      "model": "iPhone 17",
       "storage": "",
       "colour": "",
-      "tier": "C",
+      "tier": "S",
       "isNew": false,
       "ownerHistory": [
         {
-          "owner": "Silmi",
-          "date": "2020-01-01"
+          "date": "2020-01-01",
+          "owner": "Silmi"
         }
-      ]
+      ],
+      "status": "available",
+      "isUncertain": false
     },
     {
       "id": 14,
@@ -1037,7 +1100,7 @@
       "model": "Google Pixel 8a",
       "storage": "",
       "colour": "",
-      "tier": "A",
+      "tier": "B",
       "isNew": false,
       "ownerHistory": [
         {
@@ -1051,7 +1114,7 @@
       "model": "iPhone XS Max",
       "storage": "",
       "colour": "",
-      "tier": "C",
+      "tier": "D",
       "isNew": false,
       "ownerHistory": [
         {
@@ -1061,8 +1124,13 @@
         {
           "owner": "Zahid",
           "date": "2026-01-05"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-16"
         }
-      ]
+      ],
+      "status": "available"
     },
     {
       "id": 18,
@@ -1083,7 +1151,7 @@
       "model": "iPhone 11",
       "storage": "",
       "colour": "",
-      "tier": "C",
+      "tier": "D",
       "isNew": false,
       "ownerHistory": [
         {
@@ -1103,8 +1171,13 @@
         {
           "owner": "Ali",
           "date": "2021-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-27"
         }
-      ]
+      ],
+      "status": "available"
     },
     {
       "id": 21,
@@ -1125,7 +1198,7 @@
       "model": "iPhone 15",
       "storage": "",
       "colour": "",
-      "tier": "A",
+      "tier": "B",
       "isNew": false,
       "ownerHistory": [
         {
@@ -1139,7 +1212,7 @@
       "model": "iPhone 11",
       "storage": "",
       "colour": "",
-      "tier": "C",
+      "tier": "D",
       "isNew": false,
       "ownerHistory": [
         {
@@ -1159,8 +1232,17 @@
         {
           "owner": "Hamza",
           "date": "2023-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-01-16"
+        },
+        {
+          "owner": "Ali",
+          "date": "2026-01-27"
         }
-      ]
+      ],
+      "status": "assigned"
     },
     {
       "id": 25,
@@ -1181,13 +1263,151 @@
       "model": "Samsung Fold 7 ",
       "storage": "",
       "colour": "",
-      "tier": "B",
+      "tier": "S",
       "status": "available",
       "isNew": true,
       "ownerHistory": [
         {
           "owner": "Axel",
           "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "assigned",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Kiki",
+          "date": "2026-01-27"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "assigned",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Tyrone",
+          "date": "2026-01-16"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "assigned",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Naziha",
+          "date": "2026-01-27"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 37,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 38,
+      "model": "iPhone 17 Pro",
+      "storage": "512GB",
+      "colour": "Deep Blue",
+      "tier": "S",
+      "status": "assigned",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Hamza",
+          "date": "2026-01-16"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "model": "iPhone 17",
+      "storage": "256GB",
+      "colour": "Black",
+      "tier": "S",
+      "status": "assigned",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "owner": "Mikyas",
+          "date": "2026-01-16"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "model": "Samsung Fold 6",
+      "storage": "256GB",
+      "colour": "Black",
+      "tier": "S",
+      "status": "incoming",
+      "isNew": true,
+      "isUncertain": false,
+      "ownerHistory": []
+    },
+    {
+      "id": 41,
+      "model": "Iphone XR",
+      "storage": "",
+      "colour": "",
+      "tier": "D",
+      "status": "assigned",
+      "isNew": false,
+      "isUncertain": false,
+      "ownerHistory": [
+        {
+          "owner": "Fatima H",
+          "date": "2026-01-16"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "model": "Iphone 11",
+      "storage": "",
+      "colour": "",
+      "tier": "D",
+      "status": "assigned",
+      "isNew": false,
+      "isUncertain": false,
+      "ownerHistory": [
+        {
+          "owner": "Fivos",
+          "date": "2026-01-16"
         }
       ]
     }
@@ -1208,7 +1428,7 @@
     "Clara": 20,
     "Assiya": 22,
     "Fatima A": 8,
-    "Zahid": 16,
+    "Zahid": 28,
     "Naziha": 2,
     "Omar": 10,
     "Mikyas": 11,
@@ -1220,10 +1440,10 @@
   },
   "phoneAssignments": {
     "Sameeha": 3,
-    "Tyrone": 6,
+    "Tyrone": 34,
     "Faizan": 7,
-    "Ali": 20,
-    "Kiki": 5,
+    "Ali": 24,
+    "Kiki": 33,
     "Simon": 1,
     "Panos": 4,
     "Celine": 15,
@@ -1233,16 +1453,21 @@
     "Clara": 21,
     "Assiya": 23,
     "Fatima A": 8,
-    "Naziha": 2,
+    "Naziha": 35,
     "Omar": 11,
-    "Mikyas": 12,
-    "Hamza": 24,
+    "Mikyas": 39,
+    "Hamza": 38,
     "Maitham": 25,
-    "Fatima H": 9,
     "William": 14,
     "Adam": 22,
-    "Zahid": 17,
-    "Axel": 26
+    "Zahid": 12,
+    "Axel": 26,
+    "Fatima H": 41,
+    "Fivos": 42
+  },
+  "secondPhoneAssignments": {
+    "Axel": 10,
+    "Zahid": 17
   },
   "pendingSwaps": {
     "Naziha": {
@@ -1261,10 +1486,6 @@
       "currentLaptopId": 25,
       "newLaptopId": 31
     },
-    "Zahid": {
-      "currentLaptopId": 16,
-      "newLaptopId": 14
-    },
     "Sameeha": {
       "currentLaptopId": 3,
       "newLaptopId": 8
@@ -1274,9 +1495,38 @@
       "newLaptopId": 27
     }
   },
-  "pendingPhoneSwaps": {},
+  "pendingPhoneSwaps": {
+    "Axel": {
+      "currentPhoneId": 26,
+      "newPhoneId": 40
+    },
+    "Celine": {
+      "currentPhoneId": 15,
+      "newPhoneId": 37
+    },
+    "Panos": {
+      "currentPhoneId": 4,
+      "newPhoneId": 6
+    },
+    "Aristotelis": {
+      "currentPhoneId": 19,
+      "newPhoneId": 36
+    },
+    "Assiya": {
+      "currentPhoneId": 23,
+      "newPhoneId": 7
+    },
+    "Fivos": {
+      "currentPhoneId": 42,
+      "newPhoneId": 5
+    },
+    "Fatima H": {
+      "currentPhoneId": 41,
+      "newPhoneId": 9
+    }
+  },
   "nextLaptopId": 39,
-  "nextPhoneId": 30,
+  "nextPhoneId": 43,
   "lockedAssignments": {
     "Sameeha": false,
     "Tyrone": false,
@@ -1289,22 +1539,28 @@
     "Mikyas": false
   },
   "lockedPhoneAssignments": {
-    "Adam": false,
-    "Zahid": false,
+    "Adam": true,
+    "Zahid": true,
     "Hussam": false,
-    "Ali": false,
-    "Simon": false,
+    "Ali": true,
+    "Simon": true,
     "Panos": false,
     "Celine": false,
     "Laila": false,
     "Aristotelis": false,
-    "Silmi": false,
+    "Silmi": true,
     "Clara": false,
     "Assiya": false,
-    "Fatima A": false,
+    "Fatima A": true,
     "Fatima H": false,
     "William": false,
-    "Naziha": false
+    "Naziha": false,
+    "Omar": true,
+    "Maitham": true,
+    "Mikyas": true,
+    "Hamza": true,
+    "Tyrone": true,
+    "Kiki": true
   },
-  "exportDate": "2026-01-06T13:37:26.605Z"
+  "exportDate": "2026-01-27T22:12:19.152Z"
 }
