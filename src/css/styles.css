@@ -39,6 +39,101 @@ body {
     min-height: 100vh;
 }
 
+body.auth-locked {
+    background:
+        radial-gradient(circle at top, rgba(59, 130, 246, 0.16), transparent 40%),
+        linear-gradient(180deg, #eef4ff 0%, #f8fafc 100%);
+}
+
+body.auth-locked > :not(#auth-screen) {
+    display: none !important;
+}
+
+.auth-screen {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+body.auth-locked .auth-screen {
+    display: flex;
+}
+
+.auth-card {
+    width: min(100%, 380px);
+    padding: 32px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.auth-eyebrow {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2563eb;
+}
+
+.auth-card h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.auth-copy {
+    margin: 0 0 20px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.auth-label {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.auth-input {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.auth-error {
+    display: none;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 13px;
+}
+
+.auth-error.visible {
+    display: block;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 4px;
+}
+
 body.assignments-view {
     /* Extra padding to ensure content is never hidden behind the fixed inventory panel */
     /* Inventory panel max height: header(~50px) + content(260px + 24px padding) + buffer */

@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
-<body>
+<body class="auth-locked">
     <header>
         <div class="header-left">
             <h1>Technology Manager</h1>
@@ -54,6 +54,8 @@
                 </div>
             </div>
             <div class="data-buttons" style="display: flex; gap: 8px;">
+                <button id="logout-button" class="btn btn-secondary"
+                    style="display: none; padding: 6px 12px; font-size: 12px;">Sign Out</button>
                 <div class="export-dropdown" style="position: relative;">
                     <button class="btn btn-secondary" onclick="toggleExportMenu()"
                         style="padding: 6px 12px; font-size: 12px;">Export Data ▾</button>
@@ -807,6 +809,21 @@
         </div>
     </div>
 
+    <div id="auth-screen" class="auth-screen">
+        <form id="login-form" class="auth-card">
+            <p class="auth-eyebrow">Private Access</p>
+            <h2>Technology Manager</h2>
+            <p class="auth-copy">Sign in to access the assignment dashboard.</p>
+            <div id="auth-error" class="auth-error" role="alert"></div>
+            <label class="auth-label" for="login-username">Username</label>
+            <input id="login-username" class="auth-input" type="text" autocomplete="username" required>
+            <label class="auth-label" for="login-password">Password</label>
+            <input id="login-password" class="auth-input" type="password" autocomplete="current-password" required>
+            <button id="login-submit" type="submit" class="btn btn-primary auth-submit">Sign In</button>
+        </form>
+    </div>
+
+    <script src="src/js/auth.js"></script>
     <script src="src/js/main.js"></script>
 </body>
 
