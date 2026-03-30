@@ -5,7 +5,7 @@ A web application for managing laptop and phone assignments.
 ## Features
 
 - Laptop assignment management with tier system (S, A, B, C, D)
-- Phone assignment management with 4-tier system (S, A, B, C)
+- Phone assignment management with 4-tier system (S, A, B, C) 
 - Auto-tier laptops and phones based on specs/model
 - Owner history tracking
 - Scheduled swaps
