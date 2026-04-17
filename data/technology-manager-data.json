@@ -1,4 +1,5 @@
 {
+  "exportDate": "2026-04-17T00:45:32.142Z",
   "people": [
     {
       "name": "Sameeha",
@@ -66,6 +67,12 @@
       "tier": "B",
       "phoneTier": "B",
       "phonePreference": "samsung"
+    },
+    {
+      "name": "Dihya",
+      "tier": "B",
+      "phoneTier": "B",
+      "phonePreference": ""
     },
     {
       "name": "Silmi",
@@ -715,6 +722,18 @@
         {
           "date": "2025-12-30",
           "owner": "Maitham"
+        },
+        {
+          "owner": "Dihya",
+          "date": "2026-04-16"
+        },
+        {
+          "owner": null,
+          "date": "2026-04-16"
+        },
+        {
+          "owner": "Dihya",
+          "date": "2026-04-16"
         }
       ]
     },
@@ -727,70 +746,13 @@
       "storage": "1TB",
       "size": "14\"",
       "colour": "Space Black",
-      "isNew": false,
-      "status": "incoming",
+      "isNew": true,
+      "status": "available",
       "tier": "S",
       "ownerHistory": [
         {
           "date": "Ordered ",
-          "owner": "Faizan"
-        }
-      ]
-    },
-    {
-      "id": 32,
-      "model": "MacBook Air",
-      "year": "2025",
-      "chip": "M4",
-      "ram": "24GB",
-      "storage": "512GB",
-      "size": "13\"",
-      "colour": "Sky Blue",
-      "isNew": false,
-      "status": "incoming",
-      "tier": "A",
-      "ownerHistory": [
-        {
-          "date": "Ordered By",
-          "owner": "Faizan"
-        }
-      ]
-    },
-    {
-      "id": 33,
-      "model": "MacBook Air",
-      "year": "2025",
-      "chip": "M4",
-      "ram": "32GB",
-      "storage": "512GB",
-      "size": "13\"",
-      "colour": "Midnight",
-      "isNew": false,
-      "status": "incoming",
-      "tier": "S",
-      "ownerHistory": [
-        {
-          "date": "Ordered By",
-          "owner": "Naziha"
-        }
-      ]
-    },
-    {
-      "id": 34,
-      "model": "MacBook Pro",
-      "year": "2025",
-      "chip": "M5",
-      "ram": "32GB",
-      "storage": "1TB",
-      "size": "14\"",
-      "colour": "Silver",
-      "isNew": false,
-      "status": "incoming",
-      "tier": "S",
-      "ownerHistory": [
-        {
-          "date": "Ordered By",
-          "owner": "Naziha"
+          "owner": "Maitham "
         }
       ]
     },
@@ -852,6 +814,262 @@
         {
           "owner": "Axel",
           "date": "2026-01-05"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "model": "Macbook Pro ",
+      "chip": "M5",
+      "size": "14",
+      "ram": "48GB",
+      "storage": "1TB",
+      "colour": "Black ",
+      "year": "2025",
+      "tier": "S",
+      "status": "incoming",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Hamza"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "model": "Macbook Air",
+      "chip": "M5",
+      "size": "14",
+      "ram": "16GB",
+      "storage": "512GB",
+      "colour": "Black",
+      "year": "2025",
+      "tier": "B",
+      "status": "incoming",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Hamza"
+        },
+        {
+          "date": "2026-04-16",
+          "owner": "Dihya"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "model": "Macbook Air",
+      "chip": "M5",
+      "size": "14",
+      "ram": "32GB",
+      "storage": "512GB",
+      "colour": "Silver",
+      "year": "2025",
+      "tier": "S",
+      "status": "incoming",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "date": "Ordered By",
+          "owner": "Hamza"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "model": "Macbook Pro",
+      "chip": "M3 Pro",
+      "size": "14",
+      "ram": "18GB",
+      "storage": "512GB",
+      "colour": "Black",
+      "year": "2023",
+      "tier": "B",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2026-04-16",
+          "owner": "Omar"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "24GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Sky Blue",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "A"
+    },
+    {
+      "id": 44,
+      "model": "MacBook Air",
+      "year": "2025",
+      "chip": "M4",
+      "ram": "32GB",
+      "storage": "512GB",
+      "size": "13\"",
+      "colour": "Midnight",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "S"
+    },
+    {
+      "id": 45,
+      "model": "MacBook Pro",
+      "year": "2025",
+      "chip": "M5",
+      "ram": "32GB",
+      "storage": "1TB",
+      "size": "14\"",
+      "colour": "Silver",
+      "isNew": false,
+      "status": "incoming",
+      "tier": "S"
+    },
+    {
+      "id": 46,
+      "model": "Acer",
+      "chip": "",
+      "size": "",
+      "ram": "",
+      "storage": "",
+      "colour": "",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": [
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Room"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "model": "Razer",
+      "chip": "",
+      "size": "",
+      "ram": "",
+      "storage": "",
+      "colour": "",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "Previous Owner",
+          "owner": "Maitham "
+        },
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Bedrrom "
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "model": "Razer",
+      "chip": "",
+      "size": "",
+      "ram": "",
+      "storage": "",
+      "colour": "",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Bedroom"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "model": "ASUS ViviBook",
+      "chip": "",
+      "size": "",
+      "ram": "",
+      "storage": "",
+      "colour": "",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Bedroom "
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "model": "Dell",
+      "chip": "i5",
+      "size": "16",
+      "ram": "",
+      "storage": "",
+      "colour": "",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Bedroom "
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "model": "Macbook Air",
+      "chip": "",
+      "size": "",
+      "ram": "",
+      "storage": "",
+      "colour": "Pink",
+      "year": "",
+      "tier": "D",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "2026-04-17",
+          "owner": "Girls Bedroom "
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "model": "Macbook Air ",
+      "chip": "M2",
+      "size": "16",
+      "ram": "8GB",
+      "storage": "256GB",
+      "colour": "Silver",
+      "year": "2023",
+      "tier": "C",
+      "status": "available",
+      "isNew": false,
+      "ownerHistory": [
+        {
+          "date": "Previous Owner",
+          "owner": "Maitham "
         }
       ]
     }
@@ -1157,8 +1375,13 @@
         {
           "owner": "Aristotelis",
           "date": "2019-01-01"
+        },
+        {
+          "owner": null,
+          "date": "2026-04-16"
         }
-      ]
+      ],
+      "status": "available"
     },
     {
       "id": 20,
@@ -1324,9 +1547,14 @@
       "storage": "",
       "colour": "",
       "tier": "S",
-      "status": "available",
+      "status": "assigned",
       "isNew": true,
-      "ownerHistory": []
+      "ownerHistory": [
+        {
+          "owner": "Aristotelis",
+          "date": "2026-04-16"
+        }
+      ]
     },
     {
       "id": 37,
@@ -1410,6 +1638,76 @@
           "date": "2026-01-16"
         }
       ]
+    },
+    {
+      "id": 43,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 44,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 45,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 46,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 47,
+      "model": "Samsung Fold 7",
+      "storage": "",
+      "colour": "",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 48,
+      "model": "iPhone 17 Pro",
+      "storage": "512GB",
+      "colour": "Deep Blue",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
+    },
+    {
+      "id": 49,
+      "model": "iPhone 17",
+      "storage": "256GB",
+      "colour": "Black",
+      "tier": "S",
+      "status": "available",
+      "isNew": true,
+      "ownerHistory": []
     }
   ],
   "assignments": {
@@ -1436,7 +1734,8 @@
     "Maitham": 24,
     "Hussam": 25,
     "William": 13,
-    "Adam": 26
+    "Adam": 26,
+    "Dihya": 30
   },
   "phoneAssignments": {
     "Sameeha": 3,
@@ -1448,7 +1747,7 @@
     "Panos": 4,
     "Celine": 15,
     "Laila": 18,
-    "Aristotelis": 19,
+    "Aristotelis": 36,
     "Silmi": 13,
     "Clara": 21,
     "Assiya": 23,
@@ -1467,32 +1766,25 @@
   },
   "secondPhoneAssignments": {
     "Axel": 10,
-    "Zahid": 17
+    "Zahid": 17,
+    "Aristotelis": 19
   },
   "pendingSwaps": {
-    "Naziha": {
-      "currentLaptopId": 2,
-      "newLaptopId": 33
-    },
-    "Hamza": {
-      "currentLaptopId": 23,
-      "newLaptopId": 10
-    },
-    "Omar": {
-      "currentLaptopId": 10,
-      "newLaptopId": 34
-    },
-    "Hussam": {
-      "currentLaptopId": 25,
-      "newLaptopId": 31
-    },
     "Sameeha": {
       "currentLaptopId": 3,
       "newLaptopId": 8
     },
-    "Fatima A": {
-      "currentLaptopId": 8,
-      "newLaptopId": 27
+    "Hamza": {
+      "currentLaptopId": 23,
+      "newLaptopId": 39
+    },
+    "Naziha": {
+      "currentLaptopId": 2,
+      "newLaptopId": 41
+    },
+    "Dihya": {
+      "currentLaptopId": 30,
+      "newLaptopId": 40
     }
   },
   "pendingPhoneSwaps": {
@@ -1508,10 +1800,6 @@
       "currentPhoneId": 4,
       "newPhoneId": 6
     },
-    "Aristotelis": {
-      "currentPhoneId": 19,
-      "newPhoneId": 36
-    },
     "Assiya": {
       "currentPhoneId": 23,
       "newPhoneId": 7
@@ -1525,8 +1813,8 @@
       "newPhoneId": 9
     }
   },
-  "nextLaptopId": 39,
-  "nextPhoneId": 43,
+  "nextLaptopId": 53,
+  "nextPhoneId": 50,
   "lockedAssignments": {
     "Sameeha": false,
     "Tyrone": false,
@@ -1554,13 +1842,12 @@
     "Fatima A": true,
     "Fatima H": false,
     "William": false,
-    "Naziha": false,
+    "Naziha": true,
     "Omar": true,
     "Maitham": true,
     "Mikyas": true,
     "Hamza": true,
     "Tyrone": true,
     "Kiki": true
-  },
-  "exportDate": "2026-01-27T22:12:19.152Z"
+  }
 }
