@@ -672,7 +672,23 @@ function applyLoadedData(data) {
 }
 
 async function loadData() {
-    // First try localStorage
+    // Prefer the shared server so every device sees the same latest data
+    try {
+        const response = await fetch('/api/load', { cache: 'no-store' });
+        if (response.ok) {
+            const data = await response.json();
+            if (data && !data.error) {
+                applyLoadedData(data);
+                localStorage.setItem('laptopManagerData', JSON.stringify(data));
+                console.log('Loaded data from server');
+                return true;
+            }
+        }
+    } catch (e) {
+        console.log('API not available, falling back to local cache');
+    }
+
+    // Offline fallback: localStorage cache from the last successful load
     const saved = localStorage.getItem('laptopManagerData');
     if (saved) {
         try {
@@ -684,21 +700,7 @@ async function loadData() {
         }
     }
 
-    // If no localStorage, try to load from API/server
-    try {
-        const response = await fetch('/api/load');
-        if (response.ok) {
-            const data = await response.json();
-            applyLoadedData(data);
-            localStorage.setItem('laptopManagerData', JSON.stringify(data));
-            console.log('Loaded data from server');
-            return true;
-        }
-    } catch (e) {
-        console.log('API not available, trying static file');
-    }
-
-    // Fallback to static JSON file
+    // Last-resort fallback: seed JSON shipped with the repo
     try {
         const response = await fetch('data/technology-manager-data.json');
         if (response.ok) {
@@ -714,6 +716,30 @@ async function loadData() {
 
     return false;
 }
+
+// Refresh from the shared store when the tab regains focus so other devices' edits appear
+let isRefreshingFromServer = false;
+async function refreshFromServer() {
+    if (isRefreshingFromServer) return;
+    isRefreshingFromServer = true;
+    try {
+        const response = await fetch('/api/load', { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!data || data.error) return;
+        applyLoadedData(data);
+        localStorage.setItem('laptopManagerData', JSON.stringify(data));
+        if (typeof renderAll === 'function') renderAll();
+    } catch (e) {
+        // offline / network blip — ignore
+    } finally {
+        isRefreshingFromServer = false;
+    }
+}
+window.addEventListener('focus', refreshFromServer);
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refreshFromServer();
+});
 
 // One-time migration to update people names and add phone data
 function migrateData() {
@@ -2301,7 +2327,8 @@ function openAddLaptopModal() {
     document.getElementById('laptop-submit-btn').textContent = 'Add Laptop';
     document.getElementById('laptop-form').reset();
     document.getElementById('laptop-new').checked = true; // Default to brand new for new laptops
-    document.getElementById('owner-history-section').style.display = 'none';
+    document.getElementById('owner-history-section').style.display = 'block';
+    renderOwnerHistoryEditor([]);
     document.getElementById('laptop-modal').classList.add('active');
 }
 
@@ -2434,7 +2461,11 @@ function saveLaptop(e) {
     } else {
         laptops.push({
             id: nextLaptopId++,
-            ...laptopData
+            ...laptopData,
+            ownerHistory: editingOwnerHistory.map(entry => ({
+                date: entry.date,
+                owner: entry.owner || null
+            }))
         });
     }
 
