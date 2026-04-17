@@ -1291,85 +1291,91 @@ async function init() {
         saveData();
     }
 
-    // Add incoming laptops if they don't exist
-    const mbpM5 = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "32GB" && l.colour === "Space Black");
-    if (!mbpM5) {
-        laptops.push({
-            id: nextLaptopId++,
-            model: "MacBook Pro",
-            year: "2025",
-            chip: "M5",
-            ram: "32GB",
-            storage: "1TB",
-            size: "14\"",
-            colour: "Space Black",
-            isNew: false,
-            status: "incoming"
-        });
-    }
+    // Add incoming laptops (one-time addition)
+    const newLaptopsKey = 'laptopsAddedV1';
+    if (!localStorage.getItem(newLaptopsKey)) {
+        const mbpM5 = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "32GB" && l.colour === "Space Black");
+        if (!mbpM5) {
+            laptops.push({
+                id: nextLaptopId++,
+                model: "MacBook Pro",
+                year: "2025",
+                chip: "M5",
+                ram: "32GB",
+                storage: "1TB",
+                size: "14\"",
+                colour: "Space Black",
+                isNew: false,
+                status: "incoming"
+            });
+        }
 
-    const mbaBlue = laptops.find(l => l.model === "MacBook Air" && l.chip === "M4" && l.ram === "24GB" && l.colour === "Sky Blue");
-    if (!mbaBlue) {
-        laptops.push({
-            id: nextLaptopId++,
-            model: "MacBook Air",
-            year: "2025",
-            chip: "M4",
-            ram: "24GB",
-            storage: "512GB",
-            size: "13\"",
-            colour: "Sky Blue",
-            isNew: false,
-            status: "incoming"
-        });
-    }
+        const mbaBlue = laptops.find(l => l.model === "MacBook Air" && l.chip === "M4" && l.ram === "24GB" && l.colour === "Sky Blue");
+        if (!mbaBlue) {
+            laptops.push({
+                id: nextLaptopId++,
+                model: "MacBook Air",
+                year: "2025",
+                chip: "M4",
+                ram: "24GB",
+                storage: "512GB",
+                size: "13\"",
+                colour: "Sky Blue",
+                isNew: false,
+                status: "incoming"
+            });
+        }
 
-    const mbaMidnight = laptops.find(l => l.model === "MacBook Air" && l.chip === "M4" && l.ram === "32GB" && l.colour === "Midnight");
-    if (!mbaMidnight) {
-        laptops.push({
-            id: nextLaptopId++,
-            model: "MacBook Air",
-            year: "2025",
-            chip: "M4",
-            ram: "32GB",
-            storage: "512GB",
-            size: "13\"",
-            colour: "Midnight",
-            isNew: false,
-            status: "incoming"
-        });
-    }
+        const mbaMidnight = laptops.find(l => l.model === "MacBook Air" && l.chip === "M4" && l.ram === "32GB" && l.colour === "Midnight");
+        if (!mbaMidnight) {
+            laptops.push({
+                id: nextLaptopId++,
+                model: "MacBook Air",
+                year: "2025",
+                chip: "M4",
+                ram: "32GB",
+                storage: "512GB",
+                size: "13\"",
+                colour: "Midnight",
+                isNew: false,
+                status: "incoming"
+            });
+        }
 
-    const mbpSilver = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "32GB" && l.colour === "Silver");
-    if (!mbpSilver) {
-        laptops.push({
-            id: nextLaptopId++,
-            model: "MacBook Pro",
-            year: "2025",
-            chip: "M5",
-            ram: "32GB",
-            storage: "1TB",
-            size: "14\"",
-            colour: "Silver",
-            isNew: false,
-            status: "incoming"
-        });
-    }
+        const mbpSilver = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "32GB" && l.colour === "Silver");
+        if (!mbpSilver) {
+            laptops.push({
+                id: nextLaptopId++,
+                model: "MacBook Pro",
+                year: "2025",
+                chip: "M5",
+                ram: "32GB",
+                storage: "1TB",
+                size: "14\"",
+                colour: "Silver",
+                isNew: false,
+                status: "incoming"
+            });
+        }
 
-    const mbpM5_16gb = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "16GB" && l.storage === "1TB");
-    if (!mbpM5_16gb) {
-        laptops.push({
-            id: nextLaptopId++,
-            model: "MacBook Pro",
-            year: "2025",
-            chip: "M5",
-            ram: "16GB",
-            storage: "1TB",
-            size: "14\"",
-            colour: "",
-            isNew: true,
-            status: "available"
-        });
+        const mbpM5_16gb = laptops.find(l => l.model === "MacBook Pro" && l.chip === "M5" && l.ram === "16GB" && l.storage === "1TB");
+        if (!mbpM5_16gb) {
+            laptops.push({
+                id: nextLaptopId++,
+                model: "MacBook Pro",
+                year: "2025",
+                chip: "M5",
+                ram: "16GB",
+                storage: "1TB",
+                size: "14\"",
+                colour: "",
+                isNew: true,
+                status: "available"
+            });
+        }
+
+        localStorage.setItem(newLaptopsKey, 'true');
+        saveData();
     }
 
     // Initialize owner history for assigned laptops that don't have any
