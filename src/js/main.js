@@ -1993,6 +1993,17 @@ function renderInventory() {
             });
             header.appendChild(arrivedBtn);
 
+            // Add Delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'btn-icon btn-remove';
+            deleteBtn.title = 'Delete';
+            deleteBtn.innerHTML = '🗑';
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openDeleteModal(laptop.id);
+            });
+            header.appendChild(deleteBtn);
+
             card.draggable = true;
             card.addEventListener('dragstart', (e) => {
                 draggedLaptop = laptop.id;
@@ -2503,6 +2514,11 @@ function confirmDeleteLaptop() {
     if (deletingLaptopId) {
         saveStateForUndo();
         laptops = laptops.filter(l => l.id !== deletingLaptopId);
+        Object.keys(pendingSwaps).forEach(personName => {
+            if (pendingSwaps[personName].newLaptopId === deletingLaptopId) {
+                delete pendingSwaps[personName];
+            }
+        });
         closeDeleteModal();
         renderAll();
     }
